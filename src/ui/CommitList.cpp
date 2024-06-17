@@ -706,15 +706,18 @@ public:
       for (int j = 0; j < segments.size(); ++j) {
         QColor color = colors.at(j).value<QColor>();
         QPen pen(color, 2);
+        QBrush brush(color)
         if (color == kTaintedColor) {
           pen.setStyle(Qt::DashLine);
           pen.setDashPattern({2, 2});
         }
 
         painter->setPen(pen);
+        painter->setBrush(Qt::NoBrush);
         switch (segments.at(j).toInt()) {
           case Dot:
-            painter->setPen(dot);
+            //painter->setPen(dot);
+            painter->setBrush(brush);
             painter->drawEllipse(QPoint(x1, y2), r, r);
             break;
 
