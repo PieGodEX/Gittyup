@@ -706,7 +706,7 @@ public:
       for (int j = 0; j < segments.size(); ++j) {
         QColor color = colors.at(j).value<QColor>();
         QPen pen(color, 2);
-        QBrush brush(color)
+        QBrush brush(color);
         if (color == kTaintedColor) {
           pen.setStyle(Qt::DashLine);
           pen.setDashPattern({2, 2});
